@@ -14,6 +14,12 @@ form {
     padding: 30px;
 }
 
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
 label {
     margin-bottom: 20px;
     font-size: 1.5rem;
@@ -31,6 +37,10 @@ label {
     border: none;
     color: white;
     background-color: green;
+}
+
+#addedTasks {
+    width: 300px;
 }
 
 
