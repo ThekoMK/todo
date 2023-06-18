@@ -11,6 +11,14 @@
         <form>
             <label for="task">Add a Task:</label>
             <input type="text" id="task">
+            <select name="category" id="selectCategory">
+                <option selected disabled>Select a category</option>
+                <option data-category="groceries">Groceries</option>
+                <option data-category="work">Work</option>
+                <option data-category="sport">Sport</option>
+                <option data-category="chores">Chores</option>
+                <option data-category="hobbie">Hobbie</option>
+            </select>
             <button id="addTaskBtn">Add</button>
         </form>
         <div id="addedTasks">

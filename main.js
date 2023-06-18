@@ -1,14 +1,19 @@
 let todos = [];
 
 class ToDo {
-    constructor(id, title, status) {
+    constructor(id, title, status, category) {
         this.id = id;
         this.title = title;
         this.status = status;
+        this.category = category;
     }
 
     setIsCompleted(completionStatus) {
         this.status = completionStatus;
+    };
+
+    setCategory(category) {
+        this.category = category;
     }
 }
 
@@ -60,6 +65,11 @@ addTaskBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
     const inputValue = taskInput.value;
+
+    if(inputValue === '') {
+        return alert('Add a task')
+    }
+
     const newTask = new ToDo(new Date().valueOf(), inputValue, false);
 
     todos.push(newTask);
