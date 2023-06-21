@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="wrapper">
-        <form>
-            <label for="task">Add a Task:</label>
-            <input type="text" id="task">
-            <select name="category" id="selectCategory">
-                <option selected disabled>Select a category</option>
-                <option data-category="groceries">Groceries</option>
-                <option data-category="work">Work</option>
-                <option data-category="sport">Sport</option>
-                <option data-category="chores">Chores</option>
-                <option data-category="hobbie">Hobbie</option>
-            </select>
-            <button id="addTaskBtn">Add</button>
-        </form>
-        <div id="addedTasks">
-            
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper"></div>
+        <div id="addTask">
+            <form>
+                <input type="text" id="task" placeholder="Add a Task"/>
+                <select name="category" id="selectCategory">
+                    <option selected disabled>Select a category</option>
+                    <option data-category="groceries">Groceries</option>
+                    <option data-category="work">Work</option>
+                    <option data-category="sport">Sport</option>
+                    <option data-category="chores">Chores</option>
+                    <option data-category="hobbie">Hobbie</option>
+                </select>
+                <button id="addTaskBtn">Add</button>
+            </form>
         </div>
-    </div>
+        <div id="addedTasks"></div>
 
-    <script src="main.js"></script>
-</body>
+        <script src="main.js"></script>
+    </body>
 </html>

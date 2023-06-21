@@ -20,6 +20,9 @@ class ToDo {
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById("task");
 const addedTasks = document.getElementById("addedTasks");
+const categorySelect = document.getElementById('selectCategory');
+const modal = document.getElementById('modal');
+const closeModal = document.querySelector('#modal span');
 
 const ul = document.createElement("ul");
 addedTasks.append(ul);
@@ -29,6 +32,7 @@ function renderTasks(newToDo) {
     const input = document.createElement("input");
     const label = document.createElement("label");
     const deleteButton = document.createElement('button');
+    const divElement = document.createElement('div');
     
     input.setAttribute("type", "checkbox");
     label.setAttribute("for", newToDo.id);
@@ -46,19 +50,24 @@ function renderTasks(newToDo) {
             newToDo.setIsCompleted(false);
         }
     });
+
+    const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+    const category = selectedOption.getAttribute('data-category');
+
+    newToDo.setCategory(category);
     
     
-    deleteButton.addEventListener('click', (e) => {
+    deleteButton.addEventListener('click', () => {
         li.remove();
 
         const filteredList = todos.filter(task => task.id !== newToDo.id);
         todos = filteredList;
         
-        console.log(filteredList)
     })
     
     ul.append(li);
-    li.append(input, label,deleteButton);
+    divElement.append(input,label)
+    li.append(divElement,deleteButton);
 }
 
 addTaskBtn.addEventListener("click", (e) => {
